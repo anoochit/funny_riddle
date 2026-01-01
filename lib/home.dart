@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: Text('Funny Riddle')),
       body: Column(
         children: [
           Expanded(
@@ -83,9 +83,12 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 // For each surface, create a GenUiSurface to display it.
                 final id = _surfaceIds[index];
-                return GenUiSurface(
-                  host: _genUiConversation.host,
-                  surfaceId: id,
+                return Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GenUiSurface(
+                    host: _genUiConversation.host,
+                    surfaceId: id,
+                  ),
                 );
               },
             ),
